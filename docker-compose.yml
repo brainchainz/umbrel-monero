@@ -34,7 +34,7 @@ services:
     user: "1000:1000"
     restart: unless-stopped
     stop_grace_period: 1m
-    command: --rpc-bind-ip=0.0.0.0 --confirm-external-bind --rpc-bind-port=18081 --hide-my-port --prune-blockchain --enable-dns-blocklist --log-level=0 --zmq-pub=tcp://0.0.0.0:18082
+    command: --rpc-bind-ip=0.0.0.0 --confirm-external-bind --rpc-bind-port=18081 --hide-my-port --prune-blockchain --enable-dns-blocklist --log-level=0 --zmq-pub=tcp://0.0.0.0:18083
     image: sethsimmons/simple-monerod:latest
     ports:
       - "18080:18080"
@@ -44,6 +44,7 @@ services:
       - "18080"
       - "18081"
       - "18082"
+      - "18083"
     volumes:
       - ${PWD}/data/monero:/home/monero/.bitmonero
     networks:
